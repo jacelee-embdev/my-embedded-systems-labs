@@ -1,0 +1,43 @@
+**English** | [简体中文](README_zh.md)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+# Embedded Systems Lab Notes
+
+## Organization and Author
+
+- Organization: **JesMicro**
+- Author: **Jace Lee**
+
+## About This Repository
+
+This repository records embedded systems experiments completed during my day-to-day learning. It preserves the source code, project configurations, test procedures, and analysis results so that I can review the learning process and refer to them in the future.
+
+The repository mainly includes the following types of experiments:
+
+- **Validation experiments**: verify whether a design, interface, or implementation behaves as expected.
+- **Demonstration experiments**: use actual test data to demonstrate relevant principles or technical conclusions.
+- **Performance-analysis experiments**: compare the execution time, resource overhead, and performance of different implementations.
+
+Each experiment is stored in a separate directory and includes both Chinese and English README files. New experiments will be added as my learning and practical work continue.
+
+## Experiment Index
+
+| ID | Experiment | Description |
+|---|---|---|
+| LAB001 | [FreeRTOS Queue-by-Value vs. Queue-by-Pointer ISR Timing Comparison](LAB001_INT_ResponseTime_Compare/README.md) | Compares the time required to transfer structure values and structure pointers through a FreeRTOS queue from an interrupt. |
+| LAB002 | [UART Interrupt vs. DMA Receive-Time Comparison](LAB002_UART_DMA_Transmit_Compare/README.md) | Compares how USART interrupt-driven and DMA reception affect CPU execution time. |
+
+## How to Use This Repository
+
+Each experiment is an independent project stored in its corresponding `LABxxx` directory. Before using a project, read the `README.md` in that directory for its environment, hardware connections, operating instructions, test data, and conclusions.
+
+Software and hardware configurations and measurement conditions may differ between experiments. Refer to the documentation within each experiment directory for the applicable details.
+
+> The test data and conclusions in this repository apply only to the hardware, software, and measurement conditions documented for the corresponding experiment. They should not be treated as general cross-platform performance metrics.
+
+## License
+
+This project is released under the **MIT License**.
+
+Copyright (c) 2026 JesMicro. See the [LICENSE](LICENSE) file in the repository root for the complete license terms.

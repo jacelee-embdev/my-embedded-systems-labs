@@ -1,0 +1,53 @@
+# =============================================================================
+# Operating-system metadata
+# =============================================================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# =============================================================================
+# Keil MDK-ARM
+# =============================================================================
+
+# Compiler, linker, and build outputs
+*.lst
+*.o
+*.d
+*.crf
+*.lnp
+*.axf
+*.htm
+*.build_log.htm
+*.dep
+*.iex
+*.i
+*._2i
+*.l2p
+*.fed
+*.map
+*.hex
+*.bin
+*.Bak
+*.bak
+
+# Generated scatter files inside Keil target-output directories
+**/MDK-ARM/*/*.sct
+
+# Per-user IDE and debugger files
+*.uvguix.*
+*.uvgui.*
+JLinkLog.txt
+*.dbgconf
+
+# Local verification logs
+keil_rebuild_check.log
+
+# =============================================================================
+# ESP-IDF
+# Add ESP-IDF-specific exclusions in this section when such projects are added.
+# =============================================================================
+
+# =============================================================================
+# Other platforms and toolchains
+# Add platform-specific exclusions below as the repository grows.
+# =============================================================================
