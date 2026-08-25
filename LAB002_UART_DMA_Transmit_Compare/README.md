@@ -109,6 +109,7 @@ Note: For both IT and DMA reception, the recorded main-loop time comes from a co
 The magnitude and precision of the measurements depend on the performance of the target MCU board and the logic analyzer's sample rate. Some measurement error may be present, but the underlying principle is demonstrated.
 
 ##### 8. Author’s Reflections
+NO
 
 ## License
 
