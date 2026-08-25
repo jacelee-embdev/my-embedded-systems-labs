@@ -36,6 +36,21 @@
 
 > 本仓库中的测试数据和结论仅适用于对应实验所记录的硬件、软件及测量条件，不应直接视为跨平台的通用性能指标。
 
+## 联系与交流
+
+##### 问题反馈 · Bug 提交
+
+- GitHub Issues：[提交问题或 Bug](https://github.com/jacelee-embdev/my-embedded-systems-labs/issues)
+- Email：[jacelee.embdev@gmail.com](mailto:jacelee.embdev@gmail.com)
+
+##### 交流学习 | MCU / FreeRTOS / Linux / 嵌入式 / 嵌入式英语
+
+- WeChat：`JaceLee_dev`
+
+##### 发现更多的我，查看最新动态
+
+[Bilibili](https://space.bilibili.com/3546924034558422) · [抖音](https://v.douyin.com/mlpZXS97iU4/) · [小红书](https://www.xiaohongshu.com/user/profile/69c744e200000000340199ed)
+
 ## 许可证
 
 本项目采用 **MIT License** 开源许可证。

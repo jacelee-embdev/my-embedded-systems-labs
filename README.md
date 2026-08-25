@@ -36,6 +36,21 @@ Software and hardware configurations and measurement conditions may differ betwe
 
 > The test data and conclusions in this repository apply only to the hardware, software, and measurement conditions documented for the corresponding experiment. They should not be treated as general cross-platform performance metrics.
 
+## Contact and Communication
+
+##### Issue Feedback · Bug Reports
+
+- GitHub Issues: [Report an issue or bug](https://github.com/jacelee-embdev/my-embedded-systems-labs/issues)
+- Email: [jacelee.embdev@gmail.com](mailto:jacelee.embdev@gmail.com)
+
+##### Learning and Discussion | MCU / FreeRTOS / Linux / Embedded Systems / English for Embedded Systems
+
+- WeChat: `JaceLee_dev`
+
+##### Discover More About Me and See My Latest Updates
+
+[Bilibili](https://space.bilibili.com/3546924034558422) · [Douyin](https://v.douyin.com/mlpZXS97iU4/) · [Xiaohongshu](https://www.xiaohongshu.com/user/profile/69c744e200000000340199ed)
+
 ## License
 
 This project is released under the **MIT License**.
