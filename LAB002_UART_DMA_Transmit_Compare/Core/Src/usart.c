@@ -171,7 +171,9 @@ PUTCHAR_PROTOTYPE
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
     // 拉高接收完成回调耗时追踪引脚
-    HAL_GPIO_WritePin(UartRxCallbackTrace_GPIO_Port,UartRxCallbackTrace_Pin,GPIO_PIN_SET);
+    HAL_GPIO_WritePin(UartRxCallbackTrace_GPIO_Port,
+                      UartRxCallbackTrace_Pin,
+                      GPIO_PIN_SET);
     
     if (huart->Instance == USART1)
     {
@@ -184,7 +186,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
     }
     
     // 拉低接收完成回调耗时追踪引脚
-    HAL_GPIO_WritePin(UartRxCallbackTrace_GPIO_Port,UartRxCallbackTrace_Pin,GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(UartRxCallbackTrace_GPIO_Port,
+                      UartRxCallbackTrace_Pin,
+                      GPIO_PIN_RESET);
 }
 
 //实现串口发送回调函数
