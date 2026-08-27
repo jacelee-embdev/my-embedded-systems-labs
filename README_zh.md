@@ -27,6 +27,7 @@
 |---|---|---|
 | LAB001 | [FreeRTOS 队列传值与传指针中断耗时对比](LAB001_INT_ResponseTime_Compare/README_zh.md) | 比较在中断中通过 FreeRTOS 队列传输结构体值和结构体指针的耗时。 |
 | LAB002 | [串口中断与 DMA 接收耗时对比](LAB002_UART_DMA_Transmit_Compare/README_zh.md) | 比较 USART 中断接收与 DMA 接收对 CPU 执行时间的影响。 |
+| LAB003 | [STM32F411CEU6 USART DMA FIFO 与 Burst 传输实验](LAB003_DMA_FIFO_Burst/README_zh.md) | 研究 FIFO 阈值及外设、存储器 Burst Size 对 USART DMA 数据搬运过程的影响。 |
 
 ## 阅读与使用
 
