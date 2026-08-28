@@ -143,6 +143,8 @@ README_zh.md            中文说明
 
 ##### 8. 作者思考
 
+1. 五个配置项
+
 ![5elements](Docs/Images/5elements.png)
 
 | Element               | 作用                                 |
@@ -157,11 +159,18 @@ README_zh.md            中文说明
 
 **Peripheral（SRC）→ FIFO（仓库）→ Memory（DST）**
 
-1. **FIFO Threshold**：决定仓库中的数据积累到多少时，开始向消费端交付。仓库总容量不变，改变的是触发交付的水位。
-2. **Peripheral Data Width**：决定每次从生产端 `SRC` 读取多大规格的数据，例如1、2或4字节。
-3. **Peripheral Burst Size**：决定每轮连续从生产端 `SRC` 读取多少次数据。
-4. **Memory Data Width**：决定每次向消费端 `DST` 写入多大规格的数据，例如1、2或4字节。
-5. **Memory Burst Size**：决定每轮连续向消费端 `DST` 写入多少次数据。
+    1. **FIFO Threshold**：决定仓库中的数据积累到多少时，开始向消费端交付。仓库总容量不变，改变的是触发交付的水位。
+    2. **Peripheral Data Width**：决定每次从生产端 `SRC` 读取多大规格的数据，例如1、2或4字节。
+    3. **Peripheral Burst Size**：决定每轮连续从生产端 `SRC` 读取多少次数据。
+    4. **Memory Data Width**：决定每次向消费端 `DST` 写入多大规格的数据，例如1、2或4字节。
+    5. **Memory Burst Size**：决定每轮连续向消费端 `DST` 写入多少次数据。
+
+
+2. Direct Mode 与 FIFO Mode 下的 FIFO 使用情况
+   - 需要强调的是，未启用 FIFO 时，DMA 使能后仍会通过内部的缓冲区预加载一个字节数据。这是为了当 request 到来的时候立即传输，提高响应。<img src="Docs/Images/Direct mode.png" alt="Direct mode" style="zoom:25%;" />
+   - 而启用 FIFO 时，DMA 会预先装载，装满整个 FIFO 16 个字节。请求到来的时候，会一次性全部传输，效率接近 CPU 独立操作。如果说 RAM SRAM 的数据不足（例如仅 13 字节），仍会尝试传输 16 字节，这可能会导致异常。<img src="Docs/Images/Fifo mode .png" alt="Fifo mode " style="zoom:25%;" />
+
+
 
 ## 许可证
 

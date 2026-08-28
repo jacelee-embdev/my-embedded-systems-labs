@@ -139,6 +139,8 @@ This experiment does not involve measurement accuracy, but it cannot directly ob
 
 ##### 8. Author's Reflections
 
+1. Five Configuration Parameters
+
 ![Five elements](Docs/Images/5elements.png)
 
 | Element | Function |
@@ -153,11 +155,16 @@ These five settings can be represented using a producer-warehouse-consumer model
 
 **Peripheral (SRC) → FIFO (warehouse) → Memory (DST)**
 
-1. **FIFO Threshold**: Determines how much data must accumulate in the warehouse before delivery to the consumer begins. The total warehouse capacity remains unchanged; only the delivery trigger level changes.
-2. **Peripheral Data Width**: Determines the data unit read from the producer (`SRC`) each time, such as 1, 2, or 4 bytes.
-3. **Peripheral Burst Size**: Determines how many consecutive reads are performed from the producer (`SRC`) in each round.
-4. **Memory Data Width**: Determines the data unit written to the consumer (`DST`) each time, such as 1, 2, or 4 bytes.
-5. **Memory Burst Size**: Determines how many consecutive writes are performed to the consumer (`DST`) in each round.
+   1. **FIFO Threshold**: Determines how much data must accumulate in the warehouse before delivery to the consumer begins. The total warehouse capacity remains unchanged; only the delivery trigger level changes.
+   2. **Peripheral Data Width**: Determines the data unit read from the producer (`SRC`) each time, such as 1, 2, or 4 bytes.
+   3. **Peripheral Burst Size**: Determines how many consecutive reads are performed from the producer (`SRC`) in each round.
+   4. **Memory Data Width**: Determines the data unit written to the consumer (`DST`) each time, such as 1, 2, or 4 bytes.
+   5. **Memory Burst Size**: Determines how many consecutive writes are performed to the consumer (`DST`) in each round.
+
+2. FIFO Usage in Direct Mode and FIFO Mode
+
+   - It is important to note that even when the FIFO is disabled, enabling DMA still causes one byte of data to be prefetched into an internal buffer. This allows the data to be transferred immediately when a request arrives, improving response time. <img src="Docs/Images/Direct mode.png" alt="Direct mode" style="zoom:25%;" />
+   - When the FIFO is enabled, DMA preloads the entire 16-byte FIFO. When a request arrives, all the data is transferred in a single operation, providing efficiency close to that of an independent CPU operation. If there is insufficient data in RAM/SRAM—for example, only 13 bytes—the DMA still attempts to transfer 16 bytes, which may cause an exception. <img src="Docs/Images/Fifo mode .png" alt="FIFO mode" style="zoom:25%;" />
 
 ## License
 
