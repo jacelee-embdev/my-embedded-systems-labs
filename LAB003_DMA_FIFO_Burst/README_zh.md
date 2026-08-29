@@ -1,6 +1,6 @@
 **简体中文** | [English](README.md)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../LICENSE)
 
 # STM32F411CEU6 USART DMA FIFO 与 Burst 传输实验
 
@@ -176,4 +176,4 @@ README_zh.md            中文说明
 
 本项目采用 **MIT License** 开源许可证。
 
-Copyright (c) 2026 JesMicro。完整条款请参阅根目录的 [LICENSE](LICENSE) 文件。
+Copyright (c) 2026 JesMicro。完整条款请参阅根目录的 [LICENSE](../LICENSE) 文件。

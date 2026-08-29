@@ -28,6 +28,7 @@ Each experiment is stored in a separate directory and includes both Chinese and 
 | LAB001 | [FreeRTOS Queue-by-Value vs. Queue-by-Pointer ISR Timing Comparison](LAB001_INT_ResponseTime_Compare/README.md) | Compares the time required to transfer structure values and structure pointers through a FreeRTOS queue from an interrupt. |
 | LAB002 | [UART Interrupt vs. DMA Receive-Time Comparison](LAB002_UART_DMA_Transmit_Compare/README.md) | Compares how USART interrupt-driven and DMA reception affect CPU execution time. |
 | LAB003 | [STM32F411CEU6 USART DMA FIFO and Burst Transfer Experiment](LAB003_DMA_FIFO_Burst/README.md) | Examines how FIFO Threshold and Peripheral/Memory Burst Size affect USART DMA data transfers. |
+| LAB004 | [STM32F411 TIM PWM + DMA Experiment for WT588F02B-8S One-Wire Serial Communication](LAB004_DMA_Driven_PWM/README.md) | Uses TIM2 PWM and DMA to generate the WT588F02B-8S one-wire serial control waveform. |
 
 ## How to Use This Repository
 

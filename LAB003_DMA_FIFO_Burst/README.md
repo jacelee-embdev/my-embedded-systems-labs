@@ -1,6 +1,6 @@
 [简体中文](README_zh.md) | **English**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](../LICENSE)
 
 # STM32F411CEU6 USART DMA FIFO and Burst Transfer Experiment
 
@@ -170,4 +170,4 @@ These five settings can be represented using a producer-warehouse-consumer model
 
 This project is licensed under the **MIT License**.
 
-Copyright (c) 2026 JesMicro. See [LICENSE](LICENSE) for the complete license text.
+Copyright (c) 2026 JesMicro. See [LICENSE](../LICENSE) for the complete license text.
