@@ -1,0 +1,246 @@
+<mxfile host="Electron" agent="Codex">
+  <diagram id="program-analysis" name="程序分析">
+    <mxGraphModel dx="3709" dy="2160" grid="1" gridSize="20" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3840" pageHeight="2160" background="#F6F8FB" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pageIndex" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=SF Pro Display;fontSize=30;fontStyle=1;fontColor=#FFFFFF;fillColor=#007AFF;strokeColor=none;shadow=1;" value="3" vertex="1">
+          <mxGeometry height="64" width="64" x="1370" y="68" as="geometry" />
+        </mxCell>
+        <mxCell id="titlePrefix" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=29;fontStyle=1;fontColor=#3A3A3C;whiteSpace=wrap;" value="串口私有协议：显示双缓冲接收加本地解包的" vertex="1">
+          <mxGeometry height="64" width="980" x="1450" y="67" as="geometry" />
+        </mxCell>
+        <mxCell id="titleFocus" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=48;fontStyle=1;fontColor=#1D1D1F;whiteSpace=wrap;" value="程序分析" vertex="1">
+          <mxGeometry height="96" width="300" x="2060" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=19;fontColor=#6E6E73;whiteSpace=wrap;" value="三组核心模块 · 六个核心文件 · 初始化、运行主链与核心函数实现" vertex="1">
+          <mxGeometry height="36" width="1800" x="1020" y="142" as="geometry" />
+        </mxCell>
+        <mxCell id="baseBoard" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E0E4EA;strokeWidth=2;shadow=1;" value="" vertex="1">
+          <mxGeometry height="1880" width="3680" x="80" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="sectionFiles" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=24;fontStyle=1;fontColor=#1D1D1F;" value="01 文件与模块归属 · 辅助定位" vertex="1">
+          <mxGeometry height="42" width="780" x="130" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="moduleApp" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=18;fontColor=#6647B5;fillColor=#F7F3FF;strokeColor=#D4C5FF;strokeWidth=2;spacingLeft=30;" value="APP / 协议模块&#xa;App/app.c　·　App/app.h&#xa;初始化、后端解析、协议状态与业务消费" vertex="1">
+          <mxGeometry height="130" width="1130" x="130" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="moduleBsp" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=18;fontColor=#C65324;fillColor=#FFF6F1;strokeColor=#FFC8AE;strokeWidth=2;spacingLeft=30;" value="UART BSP 模块&#xa;BSP/bsp_uart_driver.c　·　BSP/bsp_uart_driver.h&#xa;中断接收、双 Buffer 切换与接收任务" vertex="1">
+          <mxGeometry height="130" width="1130" x="1355" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="moduleBuffer" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=18;fontColor=#0071BC;fillColor=#EEF8FF;strokeColor=#A8D8FF;strokeWidth=2;spacingLeft=30;" value="环形缓冲模块&#xa;Middlewares_User/circular_buffer/circular_buffer.c / .h&#xa;创建、状态判断、单字节读写与首尾回绕" vertex="1">
+          <mxGeometry height="130" width="1130" x="2580" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="divider1" parent="1" style="shape=line;html=1;strokeColor=#D8DCE3;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="1" width="3580" x="130" y="435" as="geometry" />
+        </mxCell>
+        <mxCell id="sectionMain" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=24;fontStyle=1;fontColor=#1D1D1F;" value="02 程序主执行链 · 初始化与循环运行" vertex="1">
+          <mxGeometry height="42" width="850" x="130" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="initBand" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#E1E4E8;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="95" width="3580" x="130" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="initApp" parent="1" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=18;fontStyle=1;fontColor=#6647B5;fillColor=#FFFFFF;strokeColor=#A78BFA;strokeWidth=2;" value="app_init()" vertex="1">
+          <mxGeometry height="58" width="420" x="190" y="518" as="geometry" />
+        </mxCell>
+        <mxCell id="initQueues" parent="1" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=16;fontColor=#475467;fillColor=#FFFFFF;strokeColor=#AAB2BD;strokeWidth=2;" value="xQueueCreate() × 3&#xa;rx_ok / rx_to_parser / packet_ok" vertex="1">
+          <mxGeometry height="58" width="700" x="830" y="518" as="geometry" />
+        </mxCell>
+        <mxCell id="initTasks" parent="1" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=16;fontColor=#475467;fillColor=#FFFFFF;strokeColor=#AAB2BD;strokeWidth=2;" value="xTaskCreate() × 3&#xa;uart_rx_task / packet_parser_task / app_task" vertex="1">
+          <mxGeometry height="58" width="950" x="1750" y="518" as="geometry" />
+        </mxCell>
+        <mxCell id="initDone" parent="1" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=16;fontStyle=1;fontColor=#268342;fillColor=#E5F7EA;strokeColor=#83D296;strokeWidth=2;" value="资源就绪&#xa;进入调度运行" vertex="1">
+          <mxGeometry height="58" width="550" x="2960" y="518" as="geometry" />
+        </mxCell>
+        <mxCell id="runtimeLabel" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=18;fontStyle=1;fontColor=#6E6E73;" value="运行主链" vertex="1">
+          <mxGeometry height="32" width="260" x="130" y="615" as="geometry" />
+        </mxCell>
+        <mxCell id="halRx" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=15;fontStyle=1;fontColor=#C65324;fillColor=#FFF6F1;strokeColor=#FFB18A;strokeWidth=2;shadow=1;" value="HAL_UART_Receive_IT()&#xa;按 9 字节启动接收" vertex="1">
+          <mxGeometry height="105" width="340" x="130" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="isrNode" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=14;fontStyle=1;fontColor=#C65324;fillColor=#FFF6F1;strokeColor=#FFB18A;strokeWidth=2;shadow=1;" value="HAL_UART_&#xa;RxCpltCallback()&#xa;head 前移 / 切换 Buffer" vertex="1">
+          <mxGeometry height="105" width="360" x="535" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="queueRxOk" parent="1" style="rounded=1;arcSize=24;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=12;fontStyle=1;fontColor=#475467;fillColor=#FFFFFF;strokeColor=#667485;strokeWidth=2;dashed=1;dashPattern=6 5;" value="rx_ok_queue&#xa;接收完成通知" vertex="1">
+          <mxGeometry height="105" width="185" x="960" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="uartTaskNode" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=15;fontStyle=1;fontColor=#0071BC;fillColor=#EEF8FF;strokeColor=#74C4F7;strokeWidth=2;shadow=1;" value="uart_rx_task()&#xa;确认完成 Buffer&#xa;重启下一 Buffer 接收" vertex="1">
+          <mxGeometry height="105" width="360" x="1210" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="queueToParser" parent="1" style="rounded=1;arcSize=24;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=11;fontStyle=1;fontColor=#475467;fillColor=#FFFFFF;strokeColor=#667485;strokeWidth=2;dashed=1;dashPattern=6 5;" value="rx_to_parser_&#xa;queue&#xa;BUF_1 / BUF_2" vertex="1">
+          <mxGeometry height="105" width="185" x="1635" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="parserTaskNode" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=14;fontStyle=1;fontColor=#6647B5;fillColor=#F7F3FF;strokeColor=#A78BFA;strokeWidth=2;shadow=1;" value="packet_parser_task()&#xa;buf_read_data() → 单字节&#xa;↳ packet_parser_feed_byte()" vertex="1">
+          <mxGeometry height="105" width="560" x="1885" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="queuePacketOk" parent="1" style="rounded=1;arcSize=24;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=11;fontStyle=1;fontColor=#475467;fillColor=#FFFFFF;strokeColor=#667485;strokeWidth=2;dashed=1;dashPattern=6 5;" value="packet_ok_queue&#xa;packet_parser_t *" vertex="1">
+          <mxGeometry height="105" width="185" x="2510" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="appTaskNode" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=15;fontStyle=1;fontColor=#268342;fillColor=#F1FAF4;strokeColor=#62C77B;strokeWidth=2;shadow=1;" value="app_task()&#xa;读取 len / data[]&#xa;交给业务消费" vertex="1">
+          <mxGeometry height="105" width="380" x="2760" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="runtimeOutput" parent="1" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=15;fontStyle=1;fontColor=#268342;fillColor=#E5F7EA;strokeColor=#83D296;strokeWidth=2;" value="有效载荷&#xa;业务结果" vertex="1">
+          <mxGeometry height="105" width="300" x="3210" y="655" as="geometry" />
+        </mxCell>
+        <mxCell id="restartNote" parent="1" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=14;fontColor=#0071BC;fillColor=#E0F0FF;strokeColor=none;" value="接收循环：uart_rx_task 重新调用 HAL_UART_Receive_IT()，硬件继续写入另一 Buffer" vertex="1">
+          <mxGeometry height="58" width="1440" x="500" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="divider2" parent="1" style="shape=line;html=1;strokeColor=#D8DCE3;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="1" width="3580" x="130" y="885" as="geometry" />
+        </mxCell>
+        <mxCell id="sectionFunctions" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=24;fontStyle=1;fontColor=#1D1D1F;" value="03 核心函数内部逻辑 · 按执行职责展开" vertex="1">
+          <mxGeometry height="42" width="900" x="130" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="detailIsr" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#FFF6F1;strokeColor=#FFC8AE;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="370" width="820" x="130" y="955" as="geometry" />
+        </mxCell>
+        <mxCell id="detailIsrTitle" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=20;fontStyle=1;fontColor=#C65324;" value="HAL_UART_RxCpltCallback()" vertex="1">
+          <mxGeometry height="40" width="700" x="175" y="980" as="geometry" />
+        </mxCell>
+        <mxCell id="detailIsrFile" parent="1" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=12;fontColor=#C65324;fillColor=#FFE8DC;strokeColor=none;" value="bsp_uart_driver.c" vertex="1">
+          <mxGeometry height="34" width="260" x="640" y="983" as="geometry" />
+        </mxCell>
+        <mxCell id="detailIsrBody" parent="1" style="text;html=1;align=left;verticalAlign=top;fontFamily=PingFang SC;fontSize=16;fontColor=#8A431F;spacing=5;whiteSpace=wrap;overflow=hidden;" value="① 过滤非 USART1 的回调&#xa;&#xa;② 对已完成 Buffer：head = (head + 9) % 108&#xa;&#xa;③ buf_curr_slt 在 BUF_1 / BUF_2 间切换&#xa;&#xa;④ xQueueSendFromISR(rx_ok_queue)&#xa;&#xa;⑤ portYIELD_FROM_ISR() 按需切换任务" vertex="1">
+          <mxGeometry height="250" width="710" x="180" y="1045" as="geometry" />
+        </mxCell>
+        <mxCell id="detailUart" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#EEF8FF;strokeColor=#A8D8FF;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="370" width="850" x="980" y="955" as="geometry" />
+        </mxCell>
+        <mxCell id="detailUartTitle" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=20;fontStyle=1;fontColor=#0071BC;" value="uart_rx_task()" vertex="1">
+          <mxGeometry height="40" width="500" x="1025" y="980" as="geometry" />
+        </mxCell>
+        <mxCell id="detailUartFile" parent="1" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=12;fontColor=#0071BC;fillColor=#DFF2FF;strokeColor=none;" value="bsp_uart_driver.c" vertex="1">
+          <mxGeometry height="34" width="260" x="1520" y="983" as="geometry" />
+        </mxCell>
+        <mxCell id="detailUartBody" parent="1" style="text;html=1;align=left;verticalAlign=top;fontFamily=PingFang SC;fontSize=16;fontColor=#075F99;spacing=5;whiteSpace=wrap;overflow=hidden;" value="① create_empty_circular_buf() × 2&#xa;&#xa;② 选择 BUF_1，启动首次 HAL_UART_Receive_IT()&#xa;&#xa;③ 阻塞等待 rx_ok_queue&#xa;&#xa;④ 根据切换后的 buf_curr_slt 确认已完成 Buffer&#xa;&#xa;⑤ 发送 BUF_1 / BUF_2 至 rx_to_parser_queue&#xa;&#xa;⑥ 在另一 Buffer 的 data[head] 继续接收" vertex="1">
+          <mxGeometry height="270" width="740" x="1030" y="1045" as="geometry" />
+        </mxCell>
+        <mxCell id="detailParserTask" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F7F3FF;strokeColor=#D4C5FF;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="370" width="880" x="1860" y="955" as="geometry" />
+        </mxCell>
+        <mxCell id="detailParserTaskTitle" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=20;fontStyle=1;fontColor=#6647B5;" value="packet_parser_task()" vertex="1">
+          <mxGeometry height="40" width="550" x="1905" y="980" as="geometry" />
+        </mxCell>
+        <mxCell id="detailParserTaskFile" parent="1" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=12;fontColor=#6647B5;fillColor=#EEE8FF;strokeColor=none;" value="App/app.c" vertex="1">
+          <mxGeometry height="34" width="220" x="2470" y="983" as="geometry" />
+        </mxCell>
+        <mxCell id="detailParserTaskBody" parent="1" style="text;html=1;align=left;verticalAlign=top;fontFamily=PingFang SC;fontSize=16;fontColor=#5B4295;spacing=5;whiteSpace=wrap;overflow=hidden;" value="① get_circualr_buffer(1 / 2) 取得共享指针&#xa;&#xa;② 初始化持久化 packet_parser_t parser&#xa;&#xa;③ 阻塞等待 rx_to_parser_queue 的 Buffer 编号&#xa;&#xa;④ buf_read_data() 逐字节读取并推进 tail&#xa;&#xa;⑤ packet_parser_feed_byte() 更新解析状态&#xa;&#xa;⑥ COMPLETE：向 packet_ok_queue 发送 p_parser" vertex="1">
+          <mxGeometry height="270" width="770" x="1910" y="1045" as="geometry" />
+        </mxCell>
+        <mxCell id="detailApp" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F1FAF4;strokeColor=#B8E3C3;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="370" width="940" x="2770" y="955" as="geometry" />
+        </mxCell>
+        <mxCell id="detailAppTitle" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=20;fontStyle=1;fontColor=#268342;" value="app_task()" vertex="1">
+          <mxGeometry height="40" width="420" x="2815" y="980" as="geometry" />
+        </mxCell>
+        <mxCell id="detailAppFile" parent="1" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=12;fontColor=#268342;fillColor=#E2F6E8;strokeColor=none;" value="App/app.c" vertex="1">
+          <mxGeometry height="34" width="220" x="3440" y="983" as="geometry" />
+        </mxCell>
+        <mxCell id="detailAppBody" parent="1" style="text;html=1;align=left;verticalAlign=top;fontFamily=PingFang SC;fontSize=16;fontColor=#26763C;spacing=5;whiteSpace=wrap;overflow=hidden;" value="① 阻塞等待 packet_ok_queue&#xa;&#xa;② 接收 packet_parser_t *p_parser&#xa;&#xa;③ 读取 p_parser-&gt;parsed_packet.len&#xa;&#xa;④ 遍历 parsed_packet.data[0…len-1]&#xa;&#xa;⑤ 将有效载荷交给业务；当前示例逐字节输出日志" vertex="1">
+          <mxGeometry height="250" width="830" x="2820" y="1045" as="geometry" />
+        </mxCell>
+        <mxCell id="detailFeed" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F9F6FF;strokeColor=#D4C5FF;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="570" width="1760" x="130" y="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="detailFeedTitle" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=20;fontStyle=1;fontColor=#6647B5;" value="packet_parser_feed_byte(parser, data)" vertex="1">
+          <mxGeometry height="40" width="850" x="175" y="1385" as="geometry" />
+        </mxCell>
+        <mxCell id="detailFeedFile" parent="1" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=12;fontColor=#6647B5;fillColor=#EEE8FF;strokeColor=none;" value="App/app.c · static" vertex="1">
+          <mxGeometry height="34" width="300" x="1535" y="1388" as="geometry" />
+        </mxCell>
+        <mxCell id="feedEntry" parent="1" style="rounded=1;arcSize=22;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=14;fontColor=#6647B5;fillColor=#EEE8FF;strokeColor=none;" value="parser == NULL → ERROR　　否则 switch(frame_state)　　默认返回 IN_PROGRESS" vertex="1">
+          <mxGeometry height="52" width="1660" x="180" y="1440" as="geometry" />
+        </mxCell>
+        <mxCell id="feedH1" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=15;fontColor=#5B4295;fillColor=#FFFFFF;strokeColor=#B8A5F5;strokeWidth=2;spacingLeft=18;" value="&lt;span style=&quot;font-family: SFMono-Regular; font-size: 18px; font-weight: 700;&quot;&gt;RX_WAIT_HEADER_1&lt;/span&gt;&lt;br&gt;&lt;br&gt;① data == 0xFF：进入 HEADER_2&lt;br&gt;② 其他字节：保持当前状态" vertex="1">
+          <mxGeometry height="145" width="500" x="180" y="1515" as="geometry" />
+        </mxCell>
+        <mxCell id="feedH2" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=15;fontColor=#5B4295;fillColor=#FFFFFF;strokeColor=#B8A5F5;strokeWidth=2;spacingLeft=18;" value="&lt;span style=&quot;font-family: SFMono-Regular; font-size: 18px; font-weight: 700;&quot;&gt;RX_WAIT_HEADER_2&lt;/span&gt;&lt;br&gt;&lt;br&gt;① 0xFE：进入 LENGTH&lt;br&gt;② 0xFF：保持当前状态&lt;br&gt;③ 其他字节：返回 HEADER_1" vertex="1">
+          <mxGeometry height="145" width="500" x="760" y="1515" as="geometry" />
+        </mxCell>
+        <mxCell id="feedLen" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=15;fontColor=#5B4295;fillColor=#FFFFFF;strokeColor=#B8A5F5;strokeWidth=2;spacingLeft=18;" value="&lt;span style=&quot;font-family: SFMono-Regular; font-size: 18px; font-weight: 700;&quot;&gt;RX_WAIT_LENGTH&lt;/span&gt;&lt;br&gt;&lt;br&gt;① 1…100：保存 len，index 清零&lt;br&gt;② checksum = len，进入 READ_PAYLOAD&lt;br&gt;③ 非法长度：返回 HEADER_1 / ERROR" vertex="1">
+          <mxGeometry height="145" width="500" x="1340" y="1515" as="geometry" />
+        </mxCell>
+        <mxCell id="feedPayload" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=15;fontColor=#5B4295;fillColor=#FFFFFF;strokeColor=#B8A5F5;strokeWidth=2;spacingLeft=18;" value="&lt;span style=&quot;font-family: SFMono-Regular; font-size: 18px; font-weight: 700;&quot;&gt;RX_READ_PAYLOAD&lt;/span&gt;&lt;br&gt;&lt;br&gt;① 写入 parsed_packet.data[index]&lt;br&gt;② index++；checksum += data&lt;br&gt;③ index ≥ len：进入 READ_CHECK" vertex="1">
+          <mxGeometry height="145" width="500" x="180" y="1690" as="geometry" />
+        </mxCell>
+        <mxCell id="feedCheck" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=15;fontColor=#5B4295;fillColor=#FFFFFF;strokeColor=#B8A5F5;strokeWidth=2;spacingLeft=18;" value="&lt;span style=&quot;font-family: SFMono-Regular; font-size: 18px; font-weight: 700;&quot;&gt;RX_READ_CHECK&lt;/span&gt;&lt;br&gt;&lt;br&gt;① 比较 data 与 calculated_checksum&lt;br&gt;② 相等：进入 WAIT_TAIL&lt;br&gt;③ 不相等：返回 HEADER_1 / ERROR" vertex="1">
+          <mxGeometry height="145" width="500" x="760" y="1690" as="geometry" />
+        </mxCell>
+        <mxCell id="feedTail" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=15;fontColor=#5B4295;fillColor=#FFFFFF;strokeColor=#B8A5F5;strokeWidth=2;spacingLeft=18;" value="&lt;span style=&quot;font-family: SFMono-Regular; font-size: 18px; font-weight: 700;&quot;&gt;RX_WAIT_TAIL&lt;/span&gt;&lt;br&gt;&lt;br&gt;① data == 0xAA：返回 COMPLETE&lt;br&gt;② 其他值：返回 ERROR&lt;br&gt;③ 处理后统一复位到 HEADER_1" vertex="1">
+          <mxGeometry height="145" width="500" x="1340" y="1690" as="geometry" />
+        </mxCell>
+        <mxCell id="feedResult" parent="1" style="rounded=1;arcSize=24;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=14;fontStyle=1;fontColor=#6647B5;fillColor=#EEE8FF;strokeColor=none;" value="返回值：IN_PROGRESS＝继续收帧　·　COMPLETE＝发布 p_parser　·　ERROR＝记录错误并重新同步" vertex="1">
+          <mxGeometry height="55" width="1660" x="180" y="1855" as="geometry" />
+        </mxCell>
+        <mxCell id="detailBuffer" parent="1" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#F3F8FF;strokeColor=#BBD8FF;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="570" width="1790" x="1920" y="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="detailBufferTitle" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=22;fontStyle=1;fontColor=#0066CC;" value="环形缓冲辅助 API · 共享数据访问" vertex="1">
+          <mxGeometry height="40" width="800" x="1965" y="1385" as="geometry" />
+        </mxCell>
+        <mxCell id="detailBufferFile" parent="1" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=12;fontColor=#0071BC;fillColor=#DFF2FF;strokeColor=none;" value="circular_buffer.c / .h" vertex="1">
+          <mxGeometry height="34" width="360" x="3290" y="1388" as="geometry" />
+        </mxCell>
+        <mxCell id="apiCreate" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=16;fontColor=#075F99;fillColor=#FFFFFF;strokeColor=#74C4F7;strokeWidth=2;spacingLeft=22;" value="&lt;span style=&quot;font-family: SFMono-Regular; font-size: 19px; font-weight: 700;&quot;&gt;create_empty_circular_buf()&lt;/span&gt;&lt;br&gt;&lt;br&gt;① malloc() 分配 circular_buf_t&lt;br&gt;② NULL：记录错误并返回 NULL&lt;br&gt;③ memset() 清零后返回指针" vertex="1">
+          <mxGeometry height="155" width="800" x="1970" y="1455" as="geometry" />
+        </mxCell>
+        <mxCell id="apiStatus" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=16;fontColor=#075F99;fillColor=#FFFFFF;strokeColor=#74C4F7;strokeWidth=2;spacingLeft=22;" value="&lt;span style=&quot;font-family: SFMono-Regular; font-size: 19px; font-weight: 700;&quot;&gt;check_buf_status()&lt;/span&gt;&lt;br&gt;&lt;br&gt;① NULL → BUFFER_NULL&lt;br&gt;② head == tail → BUFFER_EMPTY&lt;br&gt;③ next head == tail → BUFFER_FULL&lt;br&gt;④ 其他情况 → BUFFER_NORMAL" vertex="1">
+          <mxGeometry height="155" width="800" x="2830" y="1455" as="geometry" />
+        </mxCell>
+        <mxCell id="apiRead" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=16;fontColor=#075F99;fillColor=#FFFFFF;strokeColor=#74C4F7;strokeWidth=2;spacingLeft=22;" value="&lt;span style=&quot;font-family: SFMono-Regular; font-size: 19px; font-weight: 700;&quot;&gt;buf_read_data() · 当前解析链使用&lt;/span&gt;&lt;br&gt;&lt;br&gt;① 检查 Buffer、数据状态和输出指针&lt;br&gt;② 读取 *p_data = data[tail]&lt;br&gt;③ tail = (tail + 1) % BUFFER_SIZE&lt;br&gt;④ 成功返回 BUFFER_WR_OK" vertex="1">
+          <mxGeometry height="175" width="800" x="1970" y="1640" as="geometry" />
+        </mxCell>
+        <mxCell id="apiWrite" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=16;fontColor=#54708A;fillColor=#FFFFFF;strokeColor=#A8D8FF;strokeWidth=2;spacingLeft=22;" value="&lt;span style=&quot;font-family: SFMono-Regular; font-size: 19px; font-weight: 700;&quot;&gt;buf_write_data() · 通用接口&lt;/span&gt;&lt;br&gt;&lt;br&gt;① 检查 Buffer 非 NULL 且非 FULL&lt;br&gt;② 写入 data[head]&lt;br&gt;③ head = (head + 1) % BUFFER_SIZE&lt;br&gt;④ 当前 UART 路径由 HAL 直接写数组，未调用" vertex="1">
+          <mxGeometry height="175" width="800" x="2830" y="1640" as="geometry" />
+        </mxCell>
+        <mxCell id="bufferNote" parent="1" style="rounded=1;arcSize=24;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=15;fontStyle=1;fontColor=#0066CC;fillColor=#E0F0FF;strokeColor=none;" value="调用边界：ISR 推进 head；后端通过 buf_read_data() 推进 tail；get_circualr_buffer() 仅返回 BSP 持有的共享指针" vertex="1">
+          <mxGeometry height="70" width="1660" x="1970" y="1840" as="geometry" />
+        </mxCell>
+        <mxCell id="initEdge1" edge="1" parent="1" source="initApp" style="edgeStyle=none;rounded=0;html=1;strokeColor=#5E6B78;strokeWidth=3;endArrow=block;endFill=1;" target="initQueues" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="initEdge2" edge="1" parent="1" source="initQueues" style="edgeStyle=none;rounded=0;html=1;strokeColor=#5E6B78;strokeWidth=3;endArrow=block;endFill=1;" target="initTasks" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="initEdge3" edge="1" parent="1" source="initTasks" style="edgeStyle=none;rounded=0;html=1;strokeColor=#5E6B78;strokeWidth=3;endArrow=block;endFill=1;" target="initDone" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="runEdge1" edge="1" parent="1" source="halRx" style="edgeStyle=none;rounded=0;html=1;strokeColor=#FF8A50;strokeWidth=3;endArrow=block;endFill=1;fontFamily=PingFang SC;fontSize=12;fontColor=#C65324;labelBackgroundColor=#FFFFFF;" target="isrNode" value="接收满 9 字节">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="runEdge2" edge="1" parent="1" source="isrNode" style="edgeStyle=none;rounded=0;html=1;strokeColor=#E86A62;strokeWidth=3;endArrow=block;endFill=1;" target="queueRxOk" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="runEdge3" edge="1" parent="1" source="queueRxOk" style="edgeStyle=none;rounded=0;html=1;strokeColor=#E86A62;strokeWidth=3;endArrow=block;endFill=1;" target="uartTaskNode" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="runEdge4" edge="1" parent="1" source="uartTaskNode" style="edgeStyle=none;rounded=0;html=1;strokeColor=#5E6B78;strokeWidth=3;endArrow=block;endFill=1;" target="queueToParser" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="runEdge5" edge="1" parent="1" source="queueToParser" style="edgeStyle=none;rounded=0;html=1;strokeColor=#5E6B78;strokeWidth=3;endArrow=block;endFill=1;" target="parserTaskNode" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="runEdge6" edge="1" parent="1" source="parserTaskNode" style="edgeStyle=none;rounded=0;html=1;strokeColor=#8D70E8;strokeWidth=3;endArrow=block;endFill=1;" target="queuePacketOk" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="runEdge7" edge="1" parent="1" source="queuePacketOk" style="edgeStyle=none;rounded=0;html=1;strokeColor=#34C759;strokeWidth=3;endArrow=block;endFill=1;" target="appTaskNode" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="runEdge8" edge="1" parent="1" source="appTaskNode" style="edgeStyle=none;rounded=0;html=1;strokeColor=#34C759;strokeWidth=3;endArrow=block;endFill=1;" target="runtimeOutput" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="runtimeRestart" edge="1" parent="1" source="uartTaskNode" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#2B9FE8;strokeWidth=2;dashed=1;dashPattern=7 5;endArrow=block;endFill=1;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" target="halRx" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1390" y="830" />
+              <mxPoint x="300" y="830" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=15;fontColor=#6E6E73;" value="图例：深灰＝函数调用 / 线程交付　　橙红＝硬件中断与 ISR 通知　　紫色＝协议解析　　绿色＝合法载荷交付　　虚线＝循环重启" vertex="1">
+          <mxGeometry height="42" width="2600" x="620" y="1985" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

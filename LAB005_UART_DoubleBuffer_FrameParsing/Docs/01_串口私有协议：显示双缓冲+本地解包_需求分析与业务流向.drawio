@@ -1,0 +1,217 @@
+<mxfile host="Electron" agent="Codex">
+  <diagram id="uart-requirements-flow" name="需求分析与业务流向">
+    <mxGraphModel dx="3709" dy="2160" grid="1" gridSize="20" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3840" pageHeight="2160" background="#F6F8FB" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pageIndex" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=SF Pro Display;fontSize=30;fontStyle=1;fontColor=#FFFFFF;fillColor=#007AFF;strokeColor=none;shadow=1;" value="1" vertex="1">
+          <mxGeometry height="64" width="64" x="1416" y="68" as="geometry" />
+        </mxCell>
+        <mxCell id="titlePrefix" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=29;fontStyle=1;fontColor=#3A3A3C;whiteSpace=wrap;" value="串口私有协议：显示双缓冲接收加本地解包的" vertex="1">
+          <mxGeometry height="64" width="970" x="1500" y="68" as="geometry" />
+        </mxCell>
+        <mxCell id="titleFocus" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=48;fontStyle=1;fontColor=#1D1D1F;whiteSpace=wrap;" value="需求分析与业务流向" vertex="1">
+          <mxGeometry height="96" width="460" x="2100" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="baseBoard" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E0E4EA;strokeWidth=2;shadow=1;" value="" vertex="1">
+          <mxGeometry height="1880" width="3680" x="80" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="reqTag" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=29;fontStyle=1;fontColor=#1D1D1F;" value="01  题目与需求" vertex="1">
+          <mxGeometry height="55" width="760" x="130" y="235" as="geometry" />
+        </mxCell>
+        <mxCell id="reqLead" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=22;fontStyle=1;fontColor=#1D1D1F;" value="题目名称" vertex="1">
+          <mxGeometry height="38" width="500" x="150" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="reqName" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=22;fontColor=#3A3A3C;whiteSpace=wrap;" value="串口私有协议：显示双缓冲接收加本地解包" vertex="1">
+          <mxGeometry height="42" width="1640" x="150" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="reqDescLabel" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=22;fontStyle=1;fontColor=#1D1D1F;" value="题目描述" vertex="1">
+          <mxGeometry height="38" width="500" x="150" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="reqText" parent="1" style="text;html=1;align=left;verticalAlign=top;fontFamily=PingFang SC;fontSize=24;fontColor=#3A3A3C;spacing=4;whiteSpace=wrap;overflow=hidden;" value="某嵌入式系统需要通过串口持续接收符合私有协议的数据流，准确识别完整数据帧，完成合法性校验与协议解包，并将有效载荷及时交付 APP 业务层。&#xa;&#xa;串口接收、协议解析与业务处理速度可能不一致。系统应降低接收链路的等待和处理压力，避免后端工作阻塞硬件接收，并在异常帧后恢复同步、继续处理后续数据。&#xa;&#xa;范围：以协议接收为主，不涉及私有协议的主动发送。" vertex="1">
+          <mxGeometry height="205" width="1640" x="150" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="topDivider" parent="1" style="shape=line;html=1;strokeColor=#E5E5EA;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="365" width="1" x="1905" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="coreTitle" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=22;fontStyle=1;fontColor=#1D1D1F;" value="核心需求" vertex="1">
+          <mxGeometry height="38" width="500" x="1970" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="coreList" parent="1" style="text;html=1;align=left;verticalAlign=top;fontFamily=PingFang SC;fontSize=29;fontColor=#3A3A3C;spacing=5;whiteSpace=wrap;overflow=hidden;" value="• 持续、可靠地接收串口数据流&#xa;• 正确识别、校验并解包私有协议帧&#xa;• 降低缓存与任务交接延迟&#xa;• 减少数据覆盖与丢包风险&#xa;• 异常后恢复同步并继续解析&#xa;• 向 APP 业务层及时交付有效载荷" vertex="1">
+          <mxGeometry height="292" width="1630" x="1970" y="358" as="geometry" />
+        </mxCell>
+        <mxCell id="protocolCard" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;fillColor=#F7F8FA;strokeColor=#E1E4E8;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="105" width="1755" x="150" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="protocolLabel" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=19;fontStyle=1;fontColor=#6E6E73;" value="题目给定 · 私有协议" vertex="1">
+          <mxGeometry height="40" width="310" x="195" y="722" as="geometry" />
+        </mxCell>
+        <mxCell id="protocolValue" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=SFMono-Regular;fontSize=23;fontStyle=1;fontColor=#1D1D1F;" value="FF FE   |   LEN   |   DATA[LEN]   |   CHECK   |   AA" vertex="1">
+          <mxGeometry height="45" width="1190" x="560" y="719" as="geometry" />
+        </mxCell>
+        <mxCell id="protocolNote" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=19;fontColor=#6E6E73;" value="LEN：1～100 字节    ·    CHECK：LEN + DATA 的低 8 位" vertex="1">
+          <mxGeometry height="42" width="520" x="1140" y="719" as="geometry" />
+        </mxCell>
+        <mxCell id="sectionDivider" parent="1" style="shape=line;html=1;strokeColor=#D8DCE3;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="1" width="3580" x="130" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="archTitle" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontFamily=PingFang SC;fontSize=29;fontStyle=1;fontColor=#1D1D1F;" value="02  初步大体方案与架构设计" vertex="1">
+          <mxGeometry height="55" width="760" x="130" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="archHint" parent="1" style="text;html=1;align=right;verticalAlign=middle;fontFamily=PingFang SC;fontSize=19;fontStyle=1;fontColor=#6E6E73;" value="橙色：执行操作流     蓝色：产出传递流" vertex="1">
+          <mxGeometry height="48" width="900" x="2680" y="865" as="geometry" />
+        </mxCell>
+        <mxCell id="laneSource" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F7F9FB;strokeColor=#D7DCE2;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="875" width="500" x="120" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="laneHw" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F1F7FF;strokeColor=#BBD8FF;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="875" width="500" x="640" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="laneIsr" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#FFF6F1;strokeColor=#FFC8AE;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="875" width="500" x="1160" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="laneFront" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#EEF8FF;strokeColor=#A8D8FF;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="875" width="700" x="1680" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="laneBack" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F7F3FF;strokeColor=#D4C5FF;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="875" width="620" x="2400" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="laneApp" parent="1" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fillColor=#F1FAF4;strokeColor=#B8E3C3;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="875" width="680" x="3040" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="laneTitle1" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=23;fontStyle=1;fontColor=#506174;" value="数据源" vertex="1">
+          <mxGeometry height="45" width="440" x="150" y="968" as="geometry" />
+        </mxCell>
+        <mxCell id="laneTitle2" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=23;fontStyle=1;fontColor=#0066CC;" value="串口硬件" vertex="1">
+          <mxGeometry height="45" width="440" x="670" y="968" as="geometry" />
+        </mxCell>
+        <mxCell id="laneTitle3" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=23;fontStyle=1;fontColor=#C65324;" value="中断服务 ISR" vertex="1">
+          <mxGeometry height="45" width="440" x="1190" y="968" as="geometry" />
+        </mxCell>
+        <mxCell id="laneTitle4" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=23;fontStyle=1;fontColor=#0071BC;" value="前端接收线程" vertex="1">
+          <mxGeometry height="45" width="640" x="1710" y="968" as="geometry" />
+        </mxCell>
+        <mxCell id="laneTitle5" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=23;fontStyle=1;fontColor=#6647B5;" value="后端解析线程" vertex="1">
+          <mxGeometry height="45" width="560" x="2430" y="968" as="geometry" />
+        </mxCell>
+        <mxCell id="laneTitle6" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=23;fontStyle=1;fontColor=#268342;" value="APP 业务线程" vertex="1">
+          <mxGeometry height="45" width="620" x="3070" y="968" as="geometry" />
+        </mxCell>
+        <mxCell id="sourceOp" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=21;fontStyle=1;fontColor=#506174;fillColor=#FFFFFF;strokeColor=#AEB8C2;strokeWidth=3;shadow=1;" value="执行操作&#xa;按私有协议持续提供串口字节流" vertex="1">
+          <mxGeometry height="180" width="420" x="160" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="hwOp" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=21;fontStyle=1;fontColor=#0066CC;fillColor=#FFFFFF;strokeColor=#69AEFF;strokeWidth=3;shadow=1;" value="执行操作&#xa;USART1 中断方式接收&#xa;每次 9 字节写入当前 Buffer" vertex="1">
+          <mxGeometry height="180" width="420" x="680" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="isrOp" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=21;fontStyle=1;fontColor=#C65324;fillColor=#FFFFFF;strokeColor=#FF9A68;strokeWidth=3;shadow=1;" value="执行操作&#xa;响应接收完成回调&#xa;推进写指针并切换 A / B 状态" vertex="1">
+          <mxGeometry height="180" width="420" x="1200" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="frontOp" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=21;fontStyle=1;fontColor=#0071BC;fillColor=#FFFFFF;strokeColor=#59B6F2;strokeWidth=3;shadow=1;" value="执行操作&#xa;等待完成通知 · 确认完成 Buffer&#xa;通知后端 · 重新挂接下一次接收" vertex="1">
+          <mxGeometry height="180" width="600" x="1730" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="backOp" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=21;fontStyle=1;fontColor=#6647B5;fillColor=#FFFFFF;strokeColor=#A98DFF;strokeWidth=3;shadow=1;" value="执行操作&#xa;读取完成 Buffer 并逐字节解包&#xa;校验长度、累加和与帧尾" vertex="1">
+          <mxGeometry height="180" width="540" x="2440" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="appOp" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=21;fontStyle=1;fontColor=#268342;fillColor=#FFFFFF;strokeColor=#62C77B;strokeWidth=3;shadow=1;" value="执行操作&#xa;接收合法包上下文&#xa;读取并消费有效载荷" vertex="1">
+          <mxGeometry height="180" width="580" x="3090" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="sourceOut" parent="1" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=20;fontStyle=1;fontColor=#506174;fillColor=#EAF0F5;strokeColor=#AEB8C2;strokeWidth=2;" value="产出&#xa;私有协议字节流" vertex="1">
+          <mxGeometry height="145" width="420" x="160" y="1460" as="geometry" />
+        </mxCell>
+        <mxCell id="hwOut" parent="1" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=20;fontStyle=1;fontColor=#0066CC;fillColor=#E4F1FF;strokeColor=#69AEFF;strokeWidth=2;" value="产出&#xa;9 字节接收块 + RX 完成事件" vertex="1">
+          <mxGeometry height="145" width="420" x="680" y="1460" as="geometry" />
+        </mxCell>
+        <mxCell id="isrOut" parent="1" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=20;fontStyle=1;fontColor=#C65324;fillColor=#FFE9DE;strokeColor=#FF9A68;strokeWidth=2;" value="产出&#xa;rx_ok_queue 接收完成通知" vertex="1">
+          <mxGeometry height="145" width="420" x="1200" y="1460" as="geometry" />
+        </mxCell>
+        <mxCell id="frontOut" parent="1" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=20;fontStyle=1;fontColor=#0071BC;fillColor=#DFF2FF;strokeColor=#59B6F2;strokeWidth=2;" value="产出&#xa;完成 Buffer 编号 + 可解析数据&#xa;双环形 Buffer A / B（108 B）" vertex="1">
+          <mxGeometry height="145" width="600" x="1730" y="1460" as="geometry" />
+        </mxCell>
+        <mxCell id="backOut" parent="1" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=20;fontStyle=1;fontColor=#6647B5;fillColor=#EEE8FF;strokeColor=#A98DFF;strokeWidth=2;" value="产出&#xa;已校验有效载荷&#xa;packet_ok_queue 包上下文" vertex="1">
+          <mxGeometry height="145" width="540" x="2440" y="1460" as="geometry" />
+        </mxCell>
+        <mxCell id="appOut" parent="1" style="rounded=1;arcSize=20;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=20;fontStyle=1;fontColor=#268342;fillColor=#E2F6E8;strokeColor=#62C77B;strokeWidth=2;" value="产出&#xa;业务处理结果" vertex="1">
+          <mxGeometry height="145" width="580" x="3090" y="1460" as="geometry" />
+        </mxCell>
+        <mxCell id="sourceNote" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=17;fontColor=#506174;fillColor=#EEF2F6;strokeColor=none;" value="FF FE | LEN | DATA | CHECK | AA" vertex="1">
+          <mxGeometry height="80" width="420" x="160" y="1670" as="geometry" />
+        </mxCell>
+        <mxCell id="hwNote" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=17;fontColor=#0066CC;fillColor=#E8F3FF;strokeColor=none;" value="USART1 · 115200 · 8-N-1" vertex="1">
+          <mxGeometry height="80" width="420" x="680" y="1670" as="geometry" />
+        </mxCell>
+        <mxCell id="isrNote" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=17;fontColor=#C65324;fillColor=#FFF0E9;strokeColor=none;" value="ISR 不解析、不搬运大块数据" vertex="1">
+          <mxGeometry height="80" width="420" x="1200" y="1670" as="geometry" />
+        </mxCell>
+        <mxCell id="frontNote" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=18;fontStyle=1;fontColor=#0071BC;fillColor=#E4F4FF;strokeColor=none;" value="A 接收 / B 解析   ⇄   B 接收 / A 解析" vertex="1">
+          <mxGeometry height="80" width="600" x="1730" y="1670" as="geometry" />
+        </mxCell>
+        <mxCell id="backNote" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=17;fontColor=#6647B5;fillColor=#F0EBFF;strokeColor=none;" value="异常帧复位状态机并重新搜索帧头" vertex="1">
+          <mxGeometry height="80" width="540" x="2440" y="1670" as="geometry" />
+        </mxCell>
+        <mxCell id="appNote" parent="1" style="rounded=1;arcSize=18;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=17;fontColor=#268342;fillColor=#E9F8ED;strokeColor=none;" value="仅消费完整、合法的有效载荷" vertex="1">
+          <mxGeometry height="80" width="580" x="3090" y="1670" as="geometry" />
+        </mxCell>
+        <mxCell id="op1" edge="1" parent="1" source="sourceOp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#FF9500;strokeWidth=4;endArrow=block;endFill=1;exitX=1;exitY=0.35;entryX=0;entryY=0.35;" target="hwOp" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="op2" edge="1" parent="1" source="hwOp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#FF9500;strokeWidth=4;endArrow=block;endFill=1;exitX=1;exitY=0.35;entryX=0;entryY=0.35;" target="isrOp" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="op3" edge="1" parent="1" source="isrOp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#FF9500;strokeWidth=4;endArrow=block;endFill=1;exitX=1;exitY=0.35;entryX=0;entryY=0.35;" target="frontOp" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="op4" edge="1" parent="1" source="frontOp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#FF9500;strokeWidth=4;endArrow=block;endFill=1;exitX=1;exitY=0.35;entryX=0;entryY=0.35;" target="backOp" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="op5" edge="1" parent="1" source="backOp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#FF9500;strokeWidth=4;endArrow=block;endFill=1;exitX=1;exitY=0.35;entryX=0;entryY=0.35;" target="appOp" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="out1" edge="1" parent="1" source="sourceOut" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#007AFF;strokeWidth=4;endArrow=block;endFill=1;exitX=1;exitY=0.65;entryX=0;entryY=0.65;" target="hwOut" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="out2" edge="1" parent="1" source="hwOut" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#007AFF;strokeWidth=4;endArrow=block;endFill=1;exitX=1;exitY=0.65;entryX=0;entryY=0.65;" target="isrOut" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="out3" edge="1" parent="1" source="isrOut" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#007AFF;strokeWidth=4;endArrow=block;endFill=1;exitX=1;exitY=0.65;entryX=0;entryY=0.65;" target="frontOut" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="out4" edge="1" parent="1" source="frontOut" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#007AFF;strokeWidth=4;endArrow=block;endFill=1;exitX=1;exitY=0.65;entryX=0;entryY=0.65;" target="backOut" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="out5" edge="1" parent="1" source="backOut" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#007AFF;strokeWidth=4;endArrow=block;endFill=1;exitX=1;exitY=0.65;entryX=0;entryY=0.65;" target="appOut" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="down1" edge="1" parent="1" source="sourceOp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#8795A4;strokeWidth=2;endArrow=block;endFill=1;" target="sourceOut" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="down2" edge="1" parent="1" source="hwOp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#69AEFF;strokeWidth=2;endArrow=block;endFill=1;" target="hwOut" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="down3" edge="1" parent="1" source="isrOp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#FF9A68;strokeWidth=2;endArrow=block;endFill=1;" target="isrOut" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="down4" edge="1" parent="1" source="frontOp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#59B6F2;strokeWidth=2;endArrow=block;endFill=1;" target="frontOut" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="down5" edge="1" parent="1" source="backOp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#A98DFF;strokeWidth=2;endArrow=block;endFill=1;" target="backOut" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="down6" edge="1" parent="1" source="appOp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#62C77B;strokeWidth=2;endArrow=block;endFill=1;" target="appOut" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="benefit1" parent="1" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=17;fontStyle=1;fontColor=#0066CC;fillColor=#EAF4FF;strokeColor=none;" value="双 Buffer · 接收与解析并行，降低等待" vertex="1">
+          <mxGeometry height="85" width="800" x="190" y="1880" as="geometry" />
+        </mxCell>
+        <mxCell id="benefit2" parent="1" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=17;fontStyle=1;fontColor=#6647B5;fillColor=#F0EBFF;strokeColor=none;" value="环形缓冲 · 首尾循环，持续周转，无需整体搬移" vertex="1">
+          <mxGeometry height="85" width="800" x="1070" y="1880" as="geometry" />
+        </mxCell>
+        <mxCell id="benefit3" parent="1" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=17;fontStyle=1;fontColor=#C65324;fillColor=#FFF0E9;strokeColor=none;" value="线程解耦 · 通知与数据分离，ISR 保持轻量" vertex="1">
+          <mxGeometry height="85" width="800" x="1950" y="1880" as="geometry" />
+        </mxCell>
+        <mxCell id="benefit4" parent="1" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontFamily=PingFang SC;fontSize=17;fontStyle=1;fontColor=#268342;fillColor=#E9F8ED;strokeColor=none;" value="可靠交付 · 完整校验后才向 APP 发布有效载荷" vertex="1">
+          <mxGeometry height="85" width="800" x="2830" y="1880" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
