@@ -87,6 +87,14 @@ Source file: [02_串口私有协议：显示双缓冲+本地解包_软件资源�
 
 Source file: [03_串口私有协议：显示双缓冲+本地解包_程序分析.drawio](Docs/03_串口私有协议：显示双缓冲+本地解包_程序分析.drawio)
 
+##### Test Results
+
+![1 ms Test Result](Docs/Images/1ms结果图.png)
+
+In actual testing, the system sustained one frame per millisecond and successfully parsed and identified abnormal frames, including frame-header errors, frame-tail errors, data errors, invalid data lengths, and checksum errors.
+
+This experiment did not run any other real application tasks; only the three data-processing tasks were active. Therefore, the result should not be considered representative.
+
 ##### Other Notes
 
 None.
