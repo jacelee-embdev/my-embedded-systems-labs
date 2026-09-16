@@ -31,6 +31,7 @@
 | LAB004 | [STM32F411 TIM PWM + DMA 模拟 WT588F02B-8S 单线串口实验](LAB004_DMA_Driven_PWM/README_zh.md) | 使用 TIM2 PWM 与 DMA 生成 WT588F02B-8S 单线串口控制波形。 |
 | LAB005 | [STM32F411 UART 双缓冲与数据帧解析实验](LAB005_UART_DoubleBuffer_FrameParsing/README_zh.md) | 基于 FreeRTOS 实现 UART 中断接收、双环形缓冲交替切换及私有协议数据帧状态机解析。 |
 | LAB006 | [STM32F411CEU6 UART DMA 循环接收 HT/TC/IDLE 事件实验](LAB006_UART_DMA_rx_HT_TC_Idle_test/README_zh.md) | 验证 UART Receive-to-Idle 与循环 DMA 接收模式下 HT、TC 和 IDLE 事件的触发规律及回调参数。 |
+| LAB007 | [STM32F411 Bootloader 与 APP 跳转实验](LAB007_Bootloader_APP/README_zh.md) | 演示 Flash 分区、APP 有效性检查，以及从 Bootloader 跳转到位于 `0x08019000` 的 APP 的基本流程。 |
 
 ## 阅读与使用
 
