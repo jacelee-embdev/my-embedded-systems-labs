@@ -32,6 +32,7 @@ Each experiment is stored in a separate directory and includes both Chinese and 
 | LAB005 | [STM32F411 UART Double-Buffer and Data-Frame Parsing Experiment](LAB005_UART_DoubleBuffer_FrameParsing/README.md) | Uses FreeRTOS to implement interrupt-driven UART reception, alternating circular buffers, and state-machine parsing of private-protocol data frames. |
 | LAB006 | [STM32F411CEU6 UART Circular DMA HT/TC/IDLE Event Experiment](LAB006_UART_DMA_rx_HT_TC_Idle_test/README.md) | Verifies HT, TC, and IDLE event behavior and callback parameters during UART Receive-to-Idle reception with circular DMA. |
 | LAB007 | [STM32F411 Bootloader and APP Jump Experiment](LAB007_Bootloader_APP/README.md) | Demonstrates Flash partitioning, APP validation, and the process of jumping from the Bootloader to an APP located at `0x08019000`. |
+| LAB008 | [STM32F411 Encrypted Firmware Update Experiment](LAB008_Encrypted_Firmware_Update/README.md) | Demonstrates YMODEM firmware reception, AES decryption, external Flash staging, previous-version backup, APP installation, first-start confirmation, and failure recovery. |
 
 ## How to Use This Repository
 

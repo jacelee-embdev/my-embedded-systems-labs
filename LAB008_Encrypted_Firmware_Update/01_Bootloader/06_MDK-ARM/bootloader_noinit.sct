@@ -1,0 +1,27 @@
+; *************************************************************
+; @file bootloader_noinit.sct
+; @brief Reserves retained SRAM for the Bootloader reset request.
+; *************************************************************
+
+; Bootloader 使用内部 Flash 的前 32 KB。
+LR_IROM1 0x08000000 0x00008000
+{
+    ER_IROM1 0x08000000 0x00008000
+    {
+        *.o (RESET, +First)
+        *(InRoot$$Sections)
+        .ANY (+RO)
+        .ANY (+XO)
+    }
+    ; 普通读写数据、零初始化数据、堆栈使用前 0x1FFF0 字节 RAM。
+    RW_IRAM1 0x20000000 0x0001FFF0
+    {
+        .ANY (+RW +ZI)
+    }
+    ; 最后 16 字节保留给复位跳转请求，启动代码不清零此区域。
+    RW_NOINIT 0x2001FFF0 UNINIT 0x00000010
+    {
+        ; 接收 C 文件中 section("NO_INIT") 指定的数据节。
+        * (NO_INIT)
+    }
+}

@@ -1,20 +1,4 @@
-# =============================================================================
-# Operating-system metadata
-# =============================================================================
-.DS_Store
-Thumbs.db
-Desktop.ini
-
-# =============================================================================
-# Local-only documentation
-# =============================================================================
-/LOCAL_GIT_WORKFLOW.md
-
-# =============================================================================
-# Keil MDK-ARM
-# =============================================================================
-
-# Compiler, linker, and build outputs
+# Keil Generated output files in the sub-directories .\Listings and .\Objects
 *.lst
 *.o
 *.d
@@ -33,26 +17,17 @@ Desktop.ini
 *.hex
 *.bin
 *.Bak
-*.bak
 
-# Generated scatter files inside Keil target-output directories
-**/MDK-ARM/*/*.sct
-
-# Per-user IDE and debugger files
+#Keil Project screen layout file
 *.uvguix.*
 *.uvgui.*
+
+#JLINK file
 JLinkLog.txt
 *.dbgconf
 
-# Local verification logs
-keil_rebuild_check.log
+# Local agent instructions and skills
+/.agents/
 
-# =============================================================================
-# ESP-IDF
-# Add ESP-IDF-specific exclusions in this section when such projects are added.
-# =============================================================================
-
-# =============================================================================
-# Other platforms and toolchains
-# Add platform-specific exclusions below as the repository grows.
-# =============================================================================
+# VS Code personal settings
+/.vscode/
